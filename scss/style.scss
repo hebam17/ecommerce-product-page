@@ -30,7 +30,7 @@ $border-radius: 15px;
 * {
   box-sizing: border-box;
   font-family: $main-font-family;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 body {
@@ -58,12 +58,12 @@ nav {
     margin-right: 1rem;
   }
 
-  #menu-outer {
+  .menu-outer {
     padding: 0;
     flex: 1;
   }
 
-  #menu-inner {
+  .menu-inner {
     margin: 0;
     padding: 0;
   }
@@ -109,6 +109,7 @@ nav {
 
     #cart {
       position: relative;
+      cursor: pointer;
     }
 
     #item-num {
@@ -140,114 +141,117 @@ nav {
       }
     }
   }
+}
+// /////////>>>>>>>>>>>>>>>>>>>>>> THE CART START
+#cart-state {
+  display: none;
+  background-color: $light-grayish-blue;
+  position: absolute !important;
+  right: 5rem !important;
+  top: 6rem !important;
+  border-radius: 0.7rem;
+  box-shadow: 0px 24px 35px -14px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0px 24px 35px -14px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 24px 35px -14px rgba(0, 0, 0, 0.4);
+  min-width: 15rem;
 
-  //////cart////
-  #cart-state {
-    display: none;
-    background-color: $light-grayish-blue;
-    position: absolute;
-    top: 3rem;
-    right: -3rem;
-    border-radius: 0.7rem;
-    box-shadow: 0px 24px 35px -14px rgba(0, 0, 0, 0.4);
-    -webkit-box-shadow: 0px 24px 35px -14px rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: 0px 24px 35px -14px rgba(0, 0, 0, 0.4);
-    min-width: 15rem;
+  /////
+  #cart-header {
+    padding: 1.8rem 1.2rem;
+    border-bottom: solid 0.1px $grayish-blue;
+    margin: 0;
+    font-size: $font-size;
+    font-weight: $font-weight2;
+    color: $black;
+  }
 
-    #cart-header {
-      padding: 1.8rem 1.2rem;
-      border-bottom: solid 0.1px $grayish-blue;
-      margin: 0;
-      font-size: $font-size;
-      font-weight: $font-weight2;
-      color: $black;
-    }
+  #cart-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    align-items: center;
+  }
 
-    #cart-content {
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: space-between;
-      align-items: center;
-    }
+  #cart-info {
+    display: flex;
+    align-items: center;
+    margin: 0 0 1.5rem 0;
+  }
 
-    #cart-info {
-      display: flex;
-      align-items: center;
-      margin: 0 0 1.5rem 0;
-    }
+  #product-img {
+    width: 3rem;
+    height: fit-content;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 5px;
+    margin: 0;
 
-    #product-img {
-      width: 3rem;
-      height: fit-content;
-      padding: 0;
-      overflow: hidden;
-      border-radius: 5px;
-      margin: 0;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        position: center;
-        margin: 0;
-        border-radius: 5px;
-      }
-    }
-
-    #product-info {
-      display: flex;
-      flex-direction: column;
-      margin: 0 1rem;
-      padding: 0;
-
-      #product-name {
-        font-size: $font-size;
-        white-space: nowrap;
-        padding-bottom: 0;
-        margin-bottom: 0;
-        color: $dark-grayish-blue;
-      }
-
-      #product-price {
-        margin-top: 0.5rem;
-        color: $dark-grayish-blue;
-
-        #total {
-          color: $black;
-          font-weight: $font-weight2;
-        }
-      }
-    }
-
-    #delete {
-      width: fit-content;
-      padding: 0;
-    }
-
-    #checkout-btn {
+    img {
       width: 100%;
-      padding: 1.2rem;
-      font-size: $font-size;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: $orange;
-      font-weight: $font-weight2;
-      color: $white;
-      border-radius: 0.7rem;
-      margin-bottom: 0.5rem;
-    }
-
-    #empty-cart {
-      padding: 4rem 6rem;
-      white-space: nowrap;
-      font-size: $font-size;
-      font-weight: $font-weight2;
-      color: $dark-grayish-blue;
+      height: 100%;
+      object-fit: cover;
+      position: center;
+      margin: 0;
+      border-radius: 5px;
     }
   }
+
+  #product-info {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1rem;
+    padding: 0;
+
+    #product-name {
+      font-size: $font-size;
+      white-space: nowrap;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      color: $dark-grayish-blue;
+    }
+
+    #product-price {
+      margin-top: 0.5rem;
+      color: $dark-grayish-blue;
+
+      #total {
+        color: $black;
+        font-weight: $font-weight2;
+      }
+    }
+  }
+
+  #delete {
+    width: fit-content;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  #checkout-btn {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: $font-size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $orange;
+    font-weight: $font-weight2;
+    color: $white;
+    border-radius: 0.7rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+  }
+
+  #empty-cart {
+    padding: 4rem 6rem;
+    white-space: nowrap;
+    font-size: $font-size;
+    font-weight: $font-weight2;
+    color: $dark-grayish-blue;
+  }
 }
+// /////////>>>>>>>>>>>>>>>>>>>>>>THE CART END
 
 // //// NAVBAR END ///////////
 
@@ -271,6 +275,10 @@ main {
   #left-main-pic {
     width: 100%;
     margin-bottom: 2rem;
+
+    &:hover {
+      cursor: pointer;
+    }
 
     #left-main {
       width: 100%;
@@ -298,6 +306,10 @@ main {
       border-radius: $border-radius;
       overflow: hidden;
       height: auto;
+
+      &:hover {
+        cursor: pointer;
+      }
 
       &:not(:last-child) {
         margin-right: 2rem;
@@ -531,8 +543,11 @@ main {
 
       #minus {
         margin-top: -0.3rem;
+        cursor: pointer;
       }
-
+      #plus {
+        cursor: pointer;
+      }
       #amount {
         color: $very-vark-blue;
         font-weight: $font-weight2;
@@ -549,6 +564,7 @@ main {
       justify-content: center;
       align-items: center;
       background: $orange;
+      cursor: pointer;
       border-radius: $border-radius * 0.5;
 
       #cart-icon img {
@@ -593,7 +609,11 @@ main {
     padding: 1.8rem 0;
   }
   // NAVBAR MEDIA END///////////
-
+  #cart-state {
+    right: 4rem !important;
+    top: 6rem !important;
+  }
+  /////
   // MAIN START////////
   main {
     grid-gap: 5rem !important;
@@ -636,7 +656,11 @@ main {
     }
   }
   // NAVBAR MEDIA END///////////
-
+  #cart-state {
+    right: 2rem !important;
+    top: 6rem !important;
+  }
+  /////
   // MAIN START //////////
   main {
     grid-gap: 4rem !important;
@@ -712,7 +736,11 @@ main {
     height: 2.5rem !important;
   }
   // NAVBAR MEDIA END///////////
-
+  #cart-state {
+    right: 0rem !important;
+    top: 4rem !important;
+  }
+  /////
   // MAIN START //////////
   main {
     grid-gap: 4rem !important;
@@ -795,12 +823,13 @@ main {
     height: 2rem !important;
   }
 
+  // NAVBAR MEDIA END///////////
+  // CART
   #cart-state {
     right: 0rem !important;
-    top: 4.5rem !important;
+    top: 4rem !important;
   }
-  // NAVBAR MEDIA END///////////
-
+  /////
   // MAIN START //////////
   main {
     grid-gap: 4rem !important;
@@ -874,6 +903,7 @@ main {
 
   #menu {
     display: block !important;
+    cursor: pointer;
     margin-right: 1rem;
   }
 
@@ -887,8 +917,14 @@ main {
     width: 1.5rem !important;
     height: 1.5rem !important;
   }
-
   #menu-outer {
+    display: block !important;
+
+    .menu-inner {
+      width: 80% !important;
+    }
+  }
+  .menu-outer {
     display: none !important;
     position: fixed;
     width: 100vw !important;
@@ -897,9 +933,8 @@ main {
     z-index: 1;
     left: 0;
     top: 0;
-    display: block;
 
-    #menu-inner {
+    .menu-inner {
       margin: 0;
       width: 0;
       height: 100%;
@@ -913,7 +948,7 @@ main {
 
     #close {
       display: block;
-      margin-bottom: 2rem;
+      margin: 1rem 0 2rem 1.3rem;
     }
 
     ul#menu-list {
@@ -922,7 +957,7 @@ main {
 
     li {
       margin-left: 0 !important;
-      padding: 0.5rem 0 0.5rem 0 !important;
+      padding: 0.5rem 0 0.5rem 1.3rem !important;
       font-weight: $font-weight2 !important;
       color: $very-vark-blue !important;
     }
@@ -932,13 +967,15 @@ main {
     z-index: 0 !important;
   }
 
+  // NAVBAR MEDIA END///////////
+
+  // CART
   #cart-state {
     right: 0rem !important;
     top: 3.5rem !important;
     min-width: 5rem !important;
   }
-  // NAVBAR MEDIA END///////////
-
+  ////
   // MAIN START //////////
   main {
     grid-gap: 4rem !important;
@@ -965,7 +1002,11 @@ main {
   #left-main-pic {
     margin-bottom: 1.5rem !important;
   }
-
+  #modal-outer {
+    #modal-intro {
+      width: 70vw !important;
+    }
+  }
   #prod-desc {
     margin-bottom: 1.5rem !important;
     font-size: $font-size2 !important;
@@ -997,19 +1038,11 @@ main {
   // NAVBAR MEDIA START//////////
 
   #cart-state {
-    right: -0.8rem !important;
-    top: 3.3rem !important;
+    right: 2.5vw !important;
+    top: 4.5rem !important;
     min-width: 5rem !important;
-    font-size: $font-size2;
-
-    // #menu-outer {
-    //   width: 100vw !important;
-    //   height: 100vh !important;
-
-    //   #menu-inner {
-    //     width: 80vw !important;
-    //   }
-    // }
+    width: 95vw;
+    z-index: 1;
 
     #cart-header {
       padding: 1.2rem 0.8rem !important;
@@ -1018,10 +1051,17 @@ main {
 
     #cart-content {
       padding: 0.5rem 1.2rem 1rem !important;
+      width: 100%;
     }
 
+    #cart-container {
+      width: 100%;
+    }
     #cart-info {
       margin: 0 0 1rem 0 !important;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
     }
 
     #product-img {
@@ -1032,8 +1072,13 @@ main {
       margin: 0 1rem 0 -0.2rem !important;
     }
 
+    #delete {
+      margin-right: 0;
+    }
+
     #checkout-btn {
-      padding: 0.8rem !important;
+      padding: 0.9rem !important;
+      border-radius: $border-radius * 0.5;
     }
   }
   // NAVBAR MEDIA END///////////
@@ -1114,6 +1159,7 @@ main {
       top: 50%;
       -ms-transform: translateY(-50%);
       transform: translateY(-50%);
+      z-index: 0;
 
       &:hover {
         cursor: pointer;
@@ -1185,19 +1231,15 @@ main {
 
 // utils
 .active {
-  border: solid 3px $orange;
+  outline: solid 3px $orange;
 
   img {
     opacity: 0.3;
   }
 }
 
-.menu-open {
-  #menu-outer {
-    display: block !important;
-    #menu-inner {
-      padding: 1rem 1.2rem;
-      width: 80%;
-    }
+.back {
+  #left-main-pic {
+    position: "initial";
   }
 }

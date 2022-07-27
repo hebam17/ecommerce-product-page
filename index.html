@@ -18,8 +18,8 @@
           <img src="./images/logo.svg" alt="logo" />
         </div>
       </div>
-      <div id="menu-outer">
-        <div id="menu-inner">
+      <div class="menu-outer">
+        <div class="menu-inner">
           <div id="close">
             <img src="./images/icon-close.svg" alt="close icon" />
           </div>
@@ -36,45 +36,45 @@
       <div id="menu-info">
         <div id="cart">
           <img src="./images/icon-cart.svg" alt="cart icon" />
-          <div id="item-num">3</div>
+          <div id="item-num">0</div>
         </div>
         <div id="user-thumbnail">
           <img src="./images/image-avatar.png" alt="user avatar" />
         </div>
-
-        <!-- cart -->
-        <div id="cart-state">
-          <p id="cart-header">Cart</p>
-          <div id="cart-content">
-            <div id="cart-info">
-              <div id="product-img">
-                <img
-                  src="./images/image-product-1-thumbnail.jpg"
-                  alt="product image"
-                />
-              </div>
-              <div id="product-info">
-                <p id="product-name">Fall limited Edition Sneakers</p>
-                <p id="product-price">
-                  <span id="price">$125.00</span>
-                  x
-                  <span id="qty">3</span>
-                  <span id="total">$375.00</span>
-                </p>
-              </div>
-              <div id="delete">
-                <img src="./images/icon-delete.svg" alt="trash delete icon" />
-              </div>
-            </div>
-            <!-- <p id="empty-cart">Your cart is empty.</p> -->
-            <div id="checkout-btn">Checkout</div>
-          </div>
-        </div>
-        <!-- cart -->
       </div>
     </nav>
     <!-- NAVBAR END -->
-
+    <!-- cart -->
+    <div id="cart-state">
+      <p id="cart-header">Cart</p>
+      <div id="cart-content">
+        <div id="cart-container" style="margin: 0; padding: 0">
+          <div id="cart-info">
+            <div id="product-img">
+              <img
+                src="./images/image-product-1-thumbnail.jpg"
+                alt="product image"
+              />
+            </div>
+            <div id="product-info">
+              <p id="product-name">Fall limited Edition Sneakers</p>
+              <p id="product-price">
+                <span id="price">$125.00</span>
+                x
+                <span id="qty">3</span>
+                <span id="total">$375.00</span>
+              </p>
+            </div>
+            <div id="delete">
+              <img src="./images/icon-delete.svg" alt="trash delete icon" />
+            </div>
+          </div>
+          <div id="checkout-btn">Checkout</div>
+        </div>
+        <p id="empty-cart">Your cart is empty.</p>
+      </div>
+    </div>
+    <!-- cart -->
     <!-- MAIN PART START -->
     <!-- MAIN LEFT START -->
     <main>
@@ -131,10 +131,6 @@
             <div id="modal-main-pic">
               <div id="close-modal">
                 <img src="./images/icon-close.svg" alt="close icon" />
-                <!-- <object
-                  data="./images/icon-close.svg"
-                  alt="close icon"
-                ></object> -->
               </div>
               <div id="modal-left-arow">
                 <img src="./images/icon-previous.svg" alt="previous arrow" />
@@ -143,7 +139,11 @@
                 <img src="./images/icon-next.svg" alt="next arrow" />
               </div>
               <div id="modal-main">
-                <img src="./images/image-product-1.jpg" alt="image product" />
+                <img
+                  src="./images/image-product-1.jpg"
+                  alt="image product"
+                  id="modal-pic"
+                />
               </div>
             </div>
             <!-- THUMBNAIL PICS -->
@@ -225,6 +225,6 @@
 
     <!--  MAIN RIGHT END-->
     <!-- MAIN PART END -->
+    <script src="./js/script.js"></script>
   </body>
-  <script src="./js/script.js"></script>
 </html>
