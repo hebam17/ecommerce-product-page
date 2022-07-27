@@ -61,7 +61,7 @@ const addToCartHandler = () => {
 // get the data from the localstorage and initialize the amount variable
 const initiatAmount = () => {
   const { amount: prodAmount } = JSON.parse(localStorage.getItem("cart"));
-  amount = prodAmount;
+  amount = prodAmount || 0;
   addToCartHandler();
   amountElem.innerText = prodAmount;
 };
@@ -97,11 +97,9 @@ let amount = 0;
 const productAmount = (action) => {
   if (action === "plus") {
     amount += 1;
-    console.log(amount);
   } else if (action === "minus") {
     if (amount !== 0) {
       amount -= 1;
-      console.log(amount);
     }
   }
   amountElem.innerText = amount;
